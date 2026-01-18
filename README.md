@@ -4,76 +4,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apiculture Antoine</title>
+  <title>Les Ruches de l'Avenir</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <h1>Apiculture Antoine</h1>
+      <!-- Logo -->
+      <img src="logo.png" alt="Les Ruches de l'Avenir" class="logo">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li class="dropdown">
-          Produits
-          <ul class="dropdown-menu">
-            <li><a href="miel.html">Miel</a></li>
-            <li><a href="elevage.html">Élevage</a></li>
-          </ul>
-        </li>
+        <li><a href="miel.html">Miel</a></li>
+        <li><a href="elevage.html">Élevage</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Section Présentation -->
     <section class="presentation">
-      <h2>Bienvenue chez Apiculture Antoine</h2>
-      <p>Nous élevons nos abeilles avec soin et proposons des produits naturels de qualité.</p>
+      <h2>MODIF Présentation</h2>
+      <p>Ici vous pouvez modifier le texte de présentation pour parler de vos ruches et de vos valeurs.</p>
     </section>
 
+    <!-- Section Actualités -->
     <section class="actualites">
-      <h2>Actualités</h2>
+      <h2>MODIF Actualités</h2>
       <div id="news-container"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Apiculture Antoine</p>
+    <p>&copy; 2026 Les Ruches de l'Avenir</p>
   </footer>
 
   <script src="actualites.js"></script>
 </body>
 </html>
+/* Base */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff8f0;
+  background-color: #fffaf0; /* fond doux */
   color: #333;
 }
 
+/* Header / Navigation */
 header {
-  background-color: #f1c40f;
+  background-color: #f7b731; /* couleur principale logo */
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header h1 {
-  display: inline-block;
-  margin: 0;
-  font-size: 24px;
+.logo {
+  height: 50px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
-  display: inline-block;
-  float: right;
+  padding: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline-block;
-  position: relative;
   margin-left: 20px;
 }
 
@@ -83,28 +81,7 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #f1c40f;
-  min-width: 120px;
-  top: 25px;
-}
-
-.dropdown-menu li {
-  display: block;
-  margin: 0;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 5px 10px;
-}
-
+/* Main */
 main {
   padding: 20px;
 }
@@ -113,85 +90,52 @@ main {
   margin-bottom: 30px;
 }
 
+/* Footer */
 footer {
-  background-color: #f1c40f;
-  padding: 10px;
+  background-color: #f7b731;
   text-align: center;
+  padding: 10px;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   nav ul {
-    float: none;
-    display: block;
+    flex-direction: column;
     text-align: center;
   }
 
   nav ul li {
-    display: block;
     margin: 10px 0;
   }
 }
-fetch('actualites.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('news-container');
-    data.forEach(item => {
-      const article = document.createElement('div');
-      article.className = 'news-item';
-      article.innerHTML = `<h3>${item.titre}</h3><p>${item.date}</p><p>${item.texte}</p>`;
-      container.appendChild(article);
-    });
-  });
-  [
-  {
-    "titre": "Nouvelle récolte de miel 2026 !",
-    "date": "18 janvier 2026",
-    "texte": "Notre première récolte de l'année est disponible, 100% naturel et local."
-  },
-  {
-    "titre": "Ouverture de l'élevage des reines",
-    "date": "15 janvier 2026",
-    "texte": "Nous avons commencé un nouvel élevage de reines sélectionnées pour leur robustesse."
-  }
-]
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miel - Apiculture Antoine</title>
+  <title>Miel - Les Ruches de l'Avenir</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <h1>Apiculture Antoine</h1>
+      <img src="logo.png" alt="Les Ruches de l'Avenir" class="logo">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li class="dropdown">
-          Produits
-          <ul class="dropdown-menu">
-            <li><a href="miel.html">Miel</a></li>
-            <li><a href="elevage.html">Élevage</a></li>
-          </ul>
-        </li>
+        <li><a href="miel.html">Miel</a></li>
+        <li><a href="elevage.html">Élevage</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Nos Miels</h2>
-    <p>Découvrez nos différents miels naturels, récoltés avec soin.</p>
-    <ul>
-      <li>Miel de fleurs sauvages</li>
-      <li>Miel d’acacia</li>
-      <li>Miel de châtaignier</li>
-    </ul>
+    <h2>MODIF Miel</h2>
+    <p>Listez ici vos différents miels, descriptions et caractéristiques.</p>
   </main>
 
   <footer>
-    <p>&copy; 2026 Apiculture Antoine</p>
+    <p>&copy; 2026 Les Ruches de l'Avenir</p>
   </footer>
 </body>
 </html>
@@ -200,34 +144,29 @@ fetch('actualites.json')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Élevage - Apiculture Antoine</title>
+  <title>Élevage - Les Ruches de l'Avenir</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <h1>Apiculture Antoine</h1>
+      <img src="logo.png" alt="Les Ruches de l'Avenir" class="logo">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li class="dropdown">
-          Produits
-          <ul class="dropdown-menu">
-            <li><a href="miel.html">Miel</a></li>
-            <li><a href="elevage.html">Élevage</a></li>
-          </ul>
-        </li>
+        <li><a href="miel.html">Miel</a></li>
+        <li><a href="elevage.html">Élevage</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Notre Élevage</h2>
-    <p>Nous élevons des reines et des colonies saines pour assurer une production durable et de qualité.</p>
+    <h2>MODIF Élevage</h2>
+    <p>Parlez ici de vos techniques d’élevage, des abeilles et de vos colonies.</p>
   </main>
 
   <footer>
-    <p>&copy; 2026 Apiculture Antoine</p>
+    <p>&copy; 2026 Les Ruches de l'Avenir</p>
   </footer>
 </body>
 </html>
@@ -236,35 +175,30 @@ fetch('actualites.json')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Apiculture Antoine</title>
+  <title>Contact - Les Ruches de l'Avenir</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <h1>Apiculture Antoine</h1>
+      <img src="logo.png" alt="Les Ruches de l'Avenir" class="logo">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li class="dropdown">
-          Produits
-          <ul class="dropdown-menu">
-            <li><a href="miel.html">Miel</a></li>
-            <li><a href="elevage.html">Élevage</a></li>
-          </ul>
-        </li>
+        <li><a href="miel.html">Miel</a></li>
+        <li><a href="elevage.html">Élevage</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Contactez-nous</h2>
-    <p>Email : <a href="mailto:contact@apicultureantoine.fr">contact@apicultureantoine.fr</a></p>
+    <h2>MODIF Contact</h2>
+    <p>Email : <a href="mailto:contact@ruches-avenir.fr">contact@ruches-avenir.fr</a></p>
     <p>Téléphone : 06 12 34 56 78</p>
   </main>
 
   <footer>
-    <p>&copy; 2026 Apiculture Antoine</p>
+    <p>&copy; 2026 Les Ruches de l'Avenir</p>
   </footer>
 </body>
 </html>
